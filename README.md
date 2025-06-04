@@ -37,12 +37,32 @@ npm run dev
 
 4. Open your browser and navigate to `http://localhost:5173`
 
+## Deployment
+
+### GitHub Pages
+
+This project is configured for automatic deployment to GitHub Pages.
+
+**Manual deployment:**
+```bash
+npm run deploy
+```
+
+**Automatic deployment:**
+- Push changes to `main` or `master` branch
+- GitHub Actions will automatically build and deploy the site
+
+**Configuration:**
+- Base path is set to `/my-portfolio/` in `vite.config.ts`
+- Homepage URL: `https://hitricky.github.io/my-portfolio/`
+
 ## Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
+- `npm run deploy` - Deploy to GitHub Pages
 
 ## Tech Stack
 
@@ -50,6 +70,7 @@ npm run dev
 - **TypeScript** - Type safety
 - **Vite** - Build tool and dev server
 - **ESLint** - Code linting
+- **Tailwind CSS** - Utility-first CSS framework
 
 ## Project Structure
 
