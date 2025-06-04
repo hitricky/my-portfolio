@@ -44,22 +44,22 @@
     background-size: 400% 400%;
     animation: gradientShift 3s ease infinite;
   }
-  
+
   .animate-gradient-slow {
     background-size: 400% 400%;
     animation: gradientShift 6s ease infinite;
   }
-  
+
   .animate-gradient-text {
     background-size: 200% 200%;
     animation: gradientTextShift 4s ease infinite;
   }
-  
+
   .animate-gradient-bg {
     background-size: 400% 400%;
     animation: gradientBgShift 8s ease infinite;
   }
-  
+
   @keyframes gradientShift {
     0% {
       background-position: 0% 50%;
@@ -71,7 +71,7 @@
       background-position: 0% 50%;
     }
   }
-  
+
   @keyframes gradientTextShift {
     0% {
       background-position: 0% 50%;
@@ -89,7 +89,7 @@
       background-position: 0% 50%;
     }
   }
-  
+
   @keyframes gradientBgShift {
     0% {
       background-position: 0% 0%;
@@ -107,12 +107,12 @@
       background-position: 0% 0%;
     }
   }
-  
+
   /* Pulse animation for gradient elements */
   .animate-gradient-pulse {
     animation: gradientPulse 2s ease-in-out infinite;
   }
-  
+
   @keyframes gradientPulse {
     0%, 100% {
       opacity: 1;

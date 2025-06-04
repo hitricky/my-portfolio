@@ -106,8 +106,8 @@ const LanguageSwitcher = () => {
       <button
         onClick={() => setLanguage('ru')}
         className={`px-3 py-1 rounded-lg text-sm font-medium transition-all duration-300 ${
-          language === 'ru' 
-            ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg animate-gradient' 
+          language === 'ru'
+            ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg animate-gradient'
             : 'text-slate-600 hover:text-purple-600 hover:bg-purple-50'
         }`}
       >
@@ -116,8 +116,8 @@ const LanguageSwitcher = () => {
       <button
         onClick={() => setLanguage('en')}
         className={`px-3 py-1 rounded-lg text-sm font-medium transition-all duration-300 ${
-          language === 'en' 
-            ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg animate-gradient' 
+          language === 'en'
+            ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg animate-gradient'
             : 'text-slate-600 hover:text-purple-600 hover:bg-purple-50'
         }`}
       >
@@ -150,12 +150,12 @@ const ChartComponent = () => {
           <span className="text-sm font-medium">+47.8%</span>
         </div>
       </div>
-      
+
       <div className="h-64 flex items-end justify-between gap-3 bg-gradient-to-t from-slate-50 to-transparent rounded-lg p-4 mb-4">
         {data.map((item, index) => (
           <div key={index} className="flex-1 flex flex-col items-center group">
             <div className="relative w-full flex flex-col items-center">
-              <div 
+              <div
                 className="w-full bg-gradient-to-t from-purple-500 to-purple-300 rounded-t-lg transition-all duration-500 hover:from-purple-600 hover:to-purple-400 shadow-lg relative animate-gradient-slow"
                 style={{ height: `${(item.price / maxPrice) * 180}px`, minHeight: '20px' }}
               >
@@ -171,7 +171,7 @@ const ChartComponent = () => {
           </div>
         ))}
       </div>
-      
+
       <div className="grid grid-cols-3 gap-4 text-center text-sm">
         <div>
           <div className="font-semibold text-slate-800">Average Price</div>
@@ -209,10 +209,10 @@ const SupportChat = () => {
     if (inputValue.trim()) {
       setMessages([...messages, { type: 'user', text: inputValue }]);
       setInputValue('');
-      
+
       setTimeout(() => {
-        setMessages(prev => [...prev, { 
-          type: 'support', 
+        setMessages(prev => [...prev, {
+          type: 'support',
           text: t('supportResponse')
         }]);
       }, 1000);
@@ -239,7 +239,7 @@ const SupportChat = () => {
               <p className="text-sm text-slate-700 font-medium">{t('techSupport')}</p>
               <p className="text-sm text-slate-600 mt-1">{t('supportGreeting')}</p>
             </div>
-            <button 
+            <button
               onClick={() => setShowMessage(false)}
               className="text-slate-400 hover:text-slate-600"
             >
@@ -265,7 +265,7 @@ const SupportChat = () => {
                 <p className="text-xs text-purple-100">{t('online')}</p>
               </div>
             </div>
-            <button 
+            <button
               onClick={() => setIsOpen(false)}
               className="text-white/80 hover:text-white"
             >
@@ -291,20 +291,20 @@ const SupportChat = () => {
             {messages.map((message, index) => (
               <div key={index} className={`flex items-start space-x-2 ${message.type === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
                 <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${
-                  message.type === 'user' 
-                    ? 'bg-purple-600 animate-gradient' 
+                  message.type === 'user'
+                    ? 'bg-purple-600 animate-gradient'
                     : 'bg-gradient-to-br from-purple-400 to-blue-400 animate-gradient'
                 }`}>
                   <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d={message.type === 'user' 
-                      ? "M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" 
+                    <path fillRule="evenodd" d={message.type === 'user'
+                      ? "M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
                       : "M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7z"
                     } clipRule="evenodd"/>
                   </svg>
                 </div>
                 <div className={`rounded-lg p-2 max-w-xs ${
-                  message.type === 'user' 
-                    ? 'bg-purple-600 text-white' 
+                  message.type === 'user'
+                    ? 'bg-purple-600 text-white'
                     : 'bg-slate-100 text-slate-700'
                 }`}>
                   <p className="text-sm">{message.text}</p>
@@ -357,7 +357,7 @@ const SupportChat = () => {
   );
 };
 
-export default function Home() {
+export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [language, setLanguage] = useState('ru');
 
@@ -378,7 +378,7 @@ export default function Home() {
                   CryptoQuasar
                 </span>
               </div>
-              
+
               <nav className="hidden md:flex space-x-8">
                 <a href="#about" className="text-slate-600 hover:text-purple-600 transition-colors">{t('about')}</a>
                 <a href="#features" className="text-slate-600 hover:text-purple-600 transition-colors">{t('features')}</a>
@@ -388,7 +388,7 @@ export default function Home() {
 
               <div className="flex items-center space-x-4">
                 <LanguageSwitcher />
-                <button 
+                <button
                   className="md:hidden p-2"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
@@ -423,7 +423,7 @@ export default function Home() {
                 <StarIcon />
                 <span className="ml-2 text-sm font-medium text-purple-700">{t('aiPoweredNft')}</span>
               </div>
-              
+
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 bg-clip-text text-transparent animate-gradient-text">
                   {t('unlockNftMarket')}
@@ -431,11 +431,11 @@ export default function Home() {
                 <br />
                 <span className="text-slate-800">{t('withAiIntelligence')}</span>
               </h1>
-              
+
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-12">
                 {t('heroDescription')}
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 animate-gradient">
                   {t('startFreeAnalysis')}
@@ -516,7 +516,7 @@ export default function Home() {
               <div>
                 <ChartComponent />
               </div>
-              
+
               <div className="space-y-6">
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                   <h4 className="font-semibold text-slate-800 mb-2">Market Cap Analysis</h4>
@@ -525,7 +525,7 @@ export default function Home() {
                     <span className="font-bold text-purple-600">$2.4B</span>
                   </div>
                 </div>
-                
+
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                   <h4 className="font-semibold text-slate-800 mb-2">Growth Metrics</h4>
                   <div className="flex items-center justify-between">
@@ -533,7 +533,7 @@ export default function Home() {
                     <span className="font-bold text-emerald-600">+18.7%</span>
                   </div>
                 </div>
-                
+
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                   <h4 className="font-semibold text-slate-800 mb-2">AI Confidence</h4>
                   <div className="flex items-center justify-between">
